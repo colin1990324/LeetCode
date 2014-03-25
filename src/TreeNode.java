@@ -269,12 +269,12 @@ public class TreeNode {
 		ArrayList<ArrayList<Integer>> arrayList = new ArrayList<ArrayList<Integer>>();
 		levelOrderUpDown(root, arrayList, 0);
 		ArrayList<ArrayList<Integer>> zigArrayList = new ArrayList<ArrayList<Integer>>();
-		for (int i = 0; i <arrayList.size(); i++) {
-			if(i%2==0)
+		for (int i = 0; i < arrayList.size(); i++) {
+			if (i % 2 == 0)
 				zigArrayList.add(arrayList.get(i));
-			else{
-				ArrayList<Integer> a=new ArrayList<Integer>();
-				for(int j=arrayList.get(i).size()-1;j>-1;j--){
+			else {
+				ArrayList<Integer> a = new ArrayList<Integer>();
+				for (int j = arrayList.get(i).size() - 1; j > -1; j--) {
 					a.add(arrayList.get(i).get(j));
 				}
 				zigArrayList.add(a);
@@ -343,31 +343,34 @@ public class TreeNode {
 			}
 		}
 	}
+
 	/**
 	 * @param n
-	 * @return how many structurally unique BST's (binary search trees) that store values 1...n
+	 * @return how many structurally unique BST's (binary search trees) that
+	 *         store values 1...n
 	 */
 	public static int numTrees(int n) {
-		if(n<1)
+		if (n < 1)
 			return 0;
-		if(n==1)
+		if (n == 1)
 			return 1;
-		ArrayList<Integer> arrayList=new ArrayList<Integer>();
-		for(int i=1;i<=n;i++)
+		ArrayList<Integer> arrayList = new ArrayList<Integer>();
+		for (int i = 1; i <= n; i++)
 			arrayList.add(i);
-        int counter=0;
-        for(int i=0;i<n;i++){
-        	counter+=numTreesHelper(arrayList,i);
-        }
-        return counter;
-    }
+		int counter = 0;
+		for (int i = 0; i < n; i++) {
+			counter += numTreesHelper(arrayList, i);
+		}
+		return counter;
+	}
+
 	public static int numTreesHelper(ArrayList<Integer> a, int n) {
-		if(a.size()==2)
+		if (a.size() == 2)
 			return 2;
 		@SuppressWarnings("unchecked")
-		ArrayList<Integer> arrayList=(ArrayList<Integer>) a.clone();
+		ArrayList<Integer> arrayList = (ArrayList<Integer>) a.clone();
 		arrayList.remove(n);
-		int counter=0;
-		return n;		
+		int counter = 0;
+		return n;
 	}
 }
