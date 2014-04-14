@@ -25,7 +25,7 @@ public class CookieClickerAlpha {
 	public void read() {
 		FileReader dFileReader = null;
 		BufferedReader br = null;
-		String urlString = "/Users/ColinMac/Documents/JavaWorkSpace/LeetCode/src/codejam2014/B.in";
+		String urlString = "/Users/ColinMac/Documents/JavaWorkSpace/LeetCode/src/codejam2014/B-large.in";
 		try {
 			dFileReader = new FileReader(new File(urlString));
 			br = new BufferedReader(dFileReader);
@@ -74,10 +74,21 @@ class GameB {
 
 	public double solver() {
 		double cost = Double.MAX_VALUE;
-		for (int i = 0; i <= X / C; i++) {
+		int head=0;
+		int tail=(int) (X/C);
+		while (tail-head>10) {
+			int mid=(head+tail)/2;
+			if(solver(mid)>solver(mid+1))
+				head=mid;
+			else
+				tail=mid;
+		}
+		for (int i = head; i <= tail; i++) {
 			double tmp = solver(i);
 			if (cost > tmp)
 				cost = tmp;
+			else
+				break;
 		}
 		return cost;
 	}
