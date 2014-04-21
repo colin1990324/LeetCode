@@ -20,6 +20,12 @@ public class WildCard {
 	public static ArrayList<String> expand(String s) {
 		ArrayList<String> output = new ArrayList<String>();
 		String[] splits = s.split("\\?");
+		if(s.length()==0)
+			return output;
+		if(splits.length==1){
+			output.add(s);
+			return output;
+		}
 		int length = splits[0].length() + 1;
 		helper(s.substring(length, s.length()), splits[0] + "1", output);
 		helper(s.substring(length, s.length()), splits[0] + "0", output);
