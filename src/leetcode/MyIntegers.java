@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.ArrayList;
+
 public class MyIntegers {
 
 	public static void main(String[] args) {
@@ -8,7 +10,17 @@ public class MyIntegers {
 		// System.out.println("input -123, output "+reverse(-123));
 		System.out.println(countAndSay(30));
 	}
-
+	
+	public ArrayList<Integer> grayCode(int n) {
+		ArrayList<Integer> result=new ArrayList<Integer>();
+		char[] code=new char[n];
+		for (int i = 0; i < code.length; i++) {
+			
+		}
+		Integer.valueOf("0101",2).toString();
+		return result;
+    }
+	
 	public static int reverse(int x) {
 		boolean negative = false;
 		if (x < 0) {
