@@ -31,7 +31,7 @@ public class WildCard {
 			output.add(s);
 			return output;
 		}
-		//
+		//else
 		int length = splits[0].length() + 1;
 		helper(s.substring(length, s.length()), splits[0] + "1", output);
 		helper(s.substring(length, s.length()), splits[0] + "0", output);

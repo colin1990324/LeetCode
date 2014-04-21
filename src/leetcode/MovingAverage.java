@@ -19,7 +19,7 @@ package leetcode;
 
 public class MovingAverage {
 	private int counter = 0;
-	private double average = 0;
+	private double total = 0;
 	private int counter2 = 0;
 	private double average2 = 0;
 
@@ -34,17 +34,16 @@ public class MovingAverage {
 			System.out.println(movingAverage.getAverage() + " "
 					+ movingAverage.getAverage2());
 		}
-		System.out.println(movingAverage.getAverage());
 	}
 
 	// normal
 	public void add(double input) {
-		average = (counter * average + input) / (counter + 1);
+		total+=input;
 		counter++;
 	}
 
 	public double getAverage() {
-		return average;
+		return total/counter;
 	}
 
 	// handle huge mount of data
