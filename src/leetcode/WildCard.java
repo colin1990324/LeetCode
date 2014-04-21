@@ -20,9 +20,9 @@ public class WildCard {
 	public static ArrayList<String> expand(String s) {
 		ArrayList<String> output = new ArrayList<String>();
 		String[] splits = s.split("\\?");
-		int lenth = splits[0].length() + 1; // lengthof the first split
-		helper(s.substring(lenth, s.length()), splits[0] + "1", output);
-		helper(s.substring(lenth, s.length()), splits[0] + "0", output);
+		int length = splits[0].length() + 1;
+		helper(s.substring(length, s.length()), splits[0] + "1", output);
+		helper(s.substring(length, s.length()), splits[0] + "0", output);
 		return output;
 	}
 
@@ -32,12 +32,12 @@ public class WildCard {
 			return;
 		}
 		String[] splits = s.split("\\?");
-		int lenth = splits[0].length();
+		int length = splits[0].length();
 		if (splits.length != 1) {
-			lenth++;
-			helper(s.substring(lenth, s.length()), pre + splits[0] + "1",
+			length++;
+			helper(s.substring(length, s.length()), pre + splits[0] + "1",
 					output);
-			helper(s.substring(lenth, s.length()), pre + splits[0] + "0",
+			helper(s.substring(length, s.length()), pre + splits[0] + "0",
 					output);
 		} else {
 			helper("", pre + splits[0], output);
