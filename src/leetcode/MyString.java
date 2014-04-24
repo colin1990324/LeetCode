@@ -6,7 +6,8 @@ public class MyString {
 		// TODO Auto-generated method stub
 		String string="007799aabbccddeeff113355zz";
 		String string2="abcdefabcdefabcdefaaaaaaaaaaaaaabbbbbbbddddddee";
-		System.out.println(reorder(string2));
+		String string3="1234.89898";
+		System.out.println(reorder(string3));
 	}
 	//http://www.coderblog.cn/View/18/%E5%BE%AE%E8%BD%AF%E7%AC%94%E8%AF%95%E9%A2%98%EF%BC%9AString%20reorder/
 	public static String reorder(String in) {
@@ -17,10 +18,12 @@ public class MyString {
 		char[] chars=in.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
 			char c=chars[i];
-			if(c<97)
+			if(47<c && c<58)
 				counter[c-22]++;
-			else
+			else if(96 <c && c<123)
 				counter[c-97]++;
+			else 
+				return "<invalid input string>";
 			sum++;
 		}
 		String output="";
