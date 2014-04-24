@@ -1,6 +1,6 @@
 package leetcode;
 
-public class MyString {
+public class Reorder {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
