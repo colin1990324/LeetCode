@@ -8,19 +8,33 @@ public class MyIntegers {
 		// TODO Auto-generated method stub
 		// System.out.println("input 123, output "+reverse(123));
 		// System.out.println("input -123, output "+reverse(-123));
-		System.out.println(countAndSay(30));
+		// System.out.println(countAndSay(30));
+		System.out.println(mysqrt(5));
 	}
-	
-	public ArrayList<Integer> grayCode(int n) {
-		ArrayList<Integer> result=new ArrayList<Integer>();
-		char[] code=new char[n];
-		for (int i = 0; i < code.length; i++) {
-			
+
+	public static int mysqrt(int in) {
+		double g0, g1, x = in;
+		if (x == 0)
+			return 0;
+		g0 = x / 2;
+		g1 = (g0 + x / g0) / 2;
+		while (Math.abs(g1 - g0) > 0.1) {
+			g0 = g1;
+			g1 = (g0 + (x / g0)) / 2;
 		}
-		Integer.valueOf("0101",2).toString();
+		return (int) Math.floor(g1);
+	}
+
+	public static ArrayList<Integer> grayCode(int n) {
+		ArrayList<Integer> result = new ArrayList<Integer>();
+		char[] code = new char[n];
+		for (int i = 0; i < code.length; i++) {
+
+		}
+		Integer.valueOf("0101", 2).toString();
 		return result;
-    }
-	
+	}
+
 	public static int reverse(int x) {
 		boolean negative = false;
 		if (x < 0) {
@@ -47,8 +61,8 @@ public class MyIntegers {
 	public static String countAndSay(int n) {
 		return countAndSay(String.valueOf(1), n);
 	}
-	
-	//input s can be any digits String
+
+	// input s can be any digits String
 	public static String countAndSay(String s, int n) {
 		if (n == 1)
 			return s;
