@@ -9,9 +9,55 @@ public class MyIntegers {
 		// System.out.println("input 123, output "+reverse(123));
 		// System.out.println("input -123, output "+reverse(-123));
 		// System.out.println(countAndSay(30));
-		System.out.println(mysqrt(5));
+		// System.out.println(mysqrt(5));
+		// int[] a={9,9,9};
+		// System.out.println(plusOne(a));
+		System.out.println(climbStairs(4));
 	}
 
+	// http://oj.leetcode.com/problems/climbing-stairs/
+	public static int climbStairs(int n) {
+		if (n == 1)
+			return 1;
+		int[] counter = new int[n + 1];
+		counter[1] = 1;
+		counter[2] = 2;
+		for (int i = 3; i < counter.length; i++) {
+			counter[i] = counter[i - 1] + counter[i - 2];
+		}
+		return counter[n];
+	}
+
+	// http://oj.leetcode.com/problems/plus-one/
+	public static int[] plusOne(int[] digits) {
+		int length = digits.length;
+		if (length == 0)
+			return digits;
+		int carry = 1;
+		for (int i = digits.length - 1; i >= 0; i--) {
+			if (carry != 1) {
+				break;
+			}
+			if (digits[i] == 9) {
+				digits[i] = 0;
+				continue;
+			}
+			digits[i]++;
+			carry = 0;
+			break;
+		}
+		if (carry == 1) {
+			int[] output = new int[length + 1];
+			output[0] = 1;
+			for (int i = 1; i < output.length; i++) {
+				output[i] = digits[i - 1];
+			}
+			return output;
+		}
+		return digits;
+	}
+
+	// http://oj.leetcode.com/problems/sqrtx/
 	public static int mysqrt(int in) {
 		double g0, g1, x = in;
 		if (x == 0)
