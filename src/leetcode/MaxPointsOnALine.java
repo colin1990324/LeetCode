@@ -11,7 +11,6 @@ import java.util.Set;
 public class MaxPointsOnALine {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Point[] pointsOne = { new Point(0, 0), new Point(0, 1),
 				new Point(1, 0), new Point(1, 1), new Point(2, 2) , new Point(3, 3) , new Point(4, 4)};
 		Point[] pointsTwo = null;
@@ -80,7 +79,7 @@ public class MaxPointsOnALine {
 private int maxValue(Map<Double, Integer> doubleIntMap) {
     int max = 0;
     Set<Double> keys = doubleIntMap.keySet();
-    Iterator iter = keys.iterator();
+    Iterator<Double> iter = keys.iterator();
     while (iter.hasNext())
         max = Math.max(max, doubleIntMap.get(iter.next()));
     return max;

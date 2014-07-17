@@ -3,7 +3,6 @@ package leetcode;
 public class SortListQuick {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] array={56, 32, 5, 12, 22, 4, 2, 9, 232, 51, 28, 32, 37};
 		ListNode head=array2ListNode(array);
 		printListNode(head);
@@ -12,14 +11,7 @@ public class SortListQuick {
 		
 		return head;
 	}
-	public static void sortList(ListNode head, ListNode end) {
-		if(head!=null && end!=null && head!=end){
-			ListNode p;
-		}
-    }
-	private static ListNode partition(ListNode head) {
-		return head;
-	}
+
 	public static ListNode array2ListNode(int[] array) {
 		ListNode head=new ListNode(array[0]);
 		ListNode pointer=head;

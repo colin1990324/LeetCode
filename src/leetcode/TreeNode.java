@@ -1,6 +1,8 @@
 package leetcode;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Class TreeNode
@@ -371,7 +373,26 @@ public class TreeNode {
 		@SuppressWarnings("unchecked")
 		ArrayList<Integer> arrayList = (ArrayList<Integer>) a.clone();
 		arrayList.remove(n);
-		int counter = 0;
 		return n;
+	}
+	
+	//print out a tree in breath first traversal
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static void breathFirstTraversalIterative(TreeNode root) {
+		Queue queue = new LinkedList();
+		TreeNode flagNode = new TreeNode(0);
+		queue.add(root);
+		queue.add(flagNode);
+		while (!queue.isEmpty()) {
+			TreeNode node = (TreeNode) queue.poll();
+			if (node != flagNode) {
+				System.err.print(node.val + " ");
+				if (node.left != null)
+					queue.add(node.left);
+				if (node.right != null)
+					queue.add(node.right);
+			} else if (!queue.isEmpty())
+				queue.add(flagNode);
+		}
 	}
 }

@@ -1,10 +1,8 @@
 package leetcode;
-import java.util.ArrayList;
 
 public class DistinctSubsequences {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		String s = "aabdbaabeeadcbbdedacbbeecbabebaeeecaeabaedadcbdbcdaabebdadbbaeabdadeaabbabbecebbebcaddaacccebeaeedababedeacdeaaaeeaecbe";
 		String t = "bddabdcae";
 		System.out.println(numDistinct(s, t));
@@ -45,6 +43,7 @@ public class DistinctSubsequences {
 	}
 
 	//recursive traceBack
+	@SuppressWarnings("unused")
 	private static void traceBack(int[][] matrixR, int[][] matrixD, int i,
 			int j, int[] counter) {
 		if (i == 0 && j == 0) {

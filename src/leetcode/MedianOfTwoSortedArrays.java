@@ -1,31 +1,42 @@
 package leetcode;
 
+//https://oj.leetcode.com/problems/median-of-two-sorted-arrays/
 public class MedianOfTwoSortedArrays {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
-	public static double findMedianSortedArrays(int A[], int B[]) {
-		int total = m + n;
-        if (total 1)
-            return find_kth(A, m, B, n, total / 2 + 1);
-        else
-            return (find_kth(A, m, B, n, total / 2)
-                    + find_kth(A, m, B, n, total / 2 + 1)) / 2.0;
-    }
-	private static int find_kth(int A[], int m, int B[], int n, int k) {
-	    //always assume that m is equal or smaller than n
-	    if (m > n) return find_kth(B, n, A, m, k);
-	    if (m == 0) return B[k - 1];
-	    if (k == 1) return min(A[0], B[0]);
-	    //divide k into two parts
-	    int ia = min(k / 2, m), ib = k - ia;
-	    if (A[ia - 1] < B[ib - 1])
-	        return find_kth(A + ia, m - ia, B, n, k - ia);
-	    else if (A[ia - 1] > B[ib - 1])
-	        return find_kth(A, m, B + ib, n - ib, k - ib);
-	    else
-	return A[ia - 1];
+
+	// http://answer.ninechapter.com/solutions/median-of-two-sorted-arrays/
+	public double findMedianSortedArrays(int A[], int B[]) {
+		int len = A.length + B.length;
+		if (len % 2 == 0) {
+			return (findKth(A, 0, B, 0, len / 2) + findKth(A, 0, B, 0,
+					len / 2 + 1)) / 2.0;
+		} else {
+			return findKth(A, 0, B, 0, len / 2 + 1);
+		}
+	}
+
+	// find kth number of two sorted array
+	public static int findKth(int[] A, int A_start, int[] B, int B_start, int k) {
+		if (A_start >= A.length)
+			return B[B_start + k - 1];
+		if (B_start >= B.length)
+			return A[A_start + k - 1];
+
+		if (k == 1)
+			return Math.min(A[A_start], B[B_start]);
+
+		int A_key = A_start + k / 2 - 1 < A.length ? A[A_start + k / 2 - 1]
+				: Integer.MAX_VALUE;
+		int B_key = B_start + k / 2 - 1 < B.length ? B[B_start + k / 2 - 1]
+				: Integer.MAX_VALUE;
+
+		if (A_key < B_key) {
+			return findKth(A, A_start + k / 2, B, B_start, k - k / 2);
+		} else {
+			return findKth(A, A_start, B, B_start + k / 2, k - k / 2);
+		}
 	}
 }

@@ -1,6 +1,6 @@
 package leetcode;
 
-public class RemoveDuplicatesromSortedList {
+public class RemoveDuplicatesFromSortedList {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -9,7 +9,7 @@ public class RemoveDuplicatesromSortedList {
 		System.out.println("original list");
 		ListNode.printListNode(head);
 		System.out.println("sorted list");
-		ListNode.printListNode(new RemoveDuplicatesromSortedList().deleteDuplicates(head));
+		ListNode.printListNode(new RemoveDuplicatesFromSortedList().deleteDuplicates(head));
 	}
 	public ListNode deleteDuplicates(ListNode head) {
 		ListNode pointer=head;

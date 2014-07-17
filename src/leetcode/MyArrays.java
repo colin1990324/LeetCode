@@ -7,9 +7,8 @@ import java.util.HashMap;
 public class MyArrays {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] A = { 1, 2, 2 };
-		int[] B = { 1, 2, 2, 3 };
+		//int[] B = { 1, 2, 2, 3 };
 		//System.out.println(searchRange(B, 2)[0]+" "+searchRange(B, 2)[1]);
 		System.out.println(singleNumber(A));
 	}
@@ -68,7 +67,6 @@ public class MyArrays {
     }
 
 	public static ArrayList<ArrayList<Integer>> subsets(int[] S) {
-		ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
 		Arrays.sort(S);
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 		subsetHelper(S, new ArrayList<Integer>(), 0, result);
@@ -77,7 +75,6 @@ public class MyArrays {
 	}
 	
 	public static ArrayList<ArrayList<Integer>> subsetsDup(int[] S) {
-		ArrayList<ArrayList<Integer>> list = new ArrayList<ArrayList<Integer>>();
 		Arrays.sort(S);
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 		subsetHelperII(S, new ArrayList<Integer>(), 0, result);
@@ -93,6 +90,7 @@ public class MyArrays {
 		// not choose
 		subsetHelper(S, list, index + 1, result);
 		// choose
+		@SuppressWarnings("unchecked")
 		ArrayList<Integer> newList = (ArrayList<Integer>) list.clone();
 		newList.add(S[index]);
 		result.add(newList);
@@ -113,6 +111,7 @@ public class MyArrays {
 		}
 		// choose
 		for (int i = 1; i <= duplicates; i++) {
+			@SuppressWarnings("unchecked")
 			ArrayList<Integer> newList = (ArrayList<Integer>) list.clone();
 			for (int j = 0; j < i; j++) {
 				newList.add(S[index]);

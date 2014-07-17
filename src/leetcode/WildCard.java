@@ -10,9 +10,9 @@ import java.util.ArrayList;
 public class WildCard {
 
 	public static void main(String[] args) {
-		String string = "1?00?101";
-		String string2 = "1?";
-		String string3 = "1";
+//		String string = "1?00?101";
+//		String string2 = "1?";
+//		String string3 = "1";
 		String string4 = "?1";
 		ArrayList<String> outoutArrayList = expand(string4);
 		for (String s : outoutArrayList) {

@@ -1,5 +1,5 @@
 package leetcode;
-public class reverseWordsInAString {
+public class ReverseWordsInAString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

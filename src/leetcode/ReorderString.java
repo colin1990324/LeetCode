@@ -3,9 +3,8 @@ package leetcode;
 public class ReorderString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String string = "007799aabbccddeeff113355zz";
-		String string2 = "abcdefabcdefabcdefaaaaaaaaaaaaaabbbbbbbddddddee";
+		//String string = "007799aabbccddeeff113355zz";
+		//String string2 = "abcdefabcdefabcdefaaaaaaaaaaaaaabbbbbbbddddddee";
 		String string3 = "1234.89898";
 		System.out.println(reorder(string3));
 	}

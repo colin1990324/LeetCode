@@ -8,8 +8,7 @@ import java.util.Set;
 public class WordBreak {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String string="leetcode";
+		//String string="leetcode";
 		Set<String> dict=new HashSet<String>();
 		dict.add("leet");
 		dict.add("code");

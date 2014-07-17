@@ -5,12 +5,11 @@ import java.util.Arrays;
 public class SearchInRotatedSortedArray {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] A = { 4, 5, 6, 7, 0, 1, 2 };
 		int[] B = { 1 };
 		int[] C = { 1, 3 };
 		int[] D = { 3, 5, 1 };
-		int[] E={1,1,3,1};
+		//int[] E={1,1,3,1};
 		int[] F={2,2,0,2};
 		int[] G={2,2,2,0,0,1};
 		System.out.println("A should be 2, result=" + search(A, 6));

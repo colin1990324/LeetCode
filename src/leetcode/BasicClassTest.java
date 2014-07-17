@@ -1,14 +1,9 @@
 package leetcode;
-import java.io.StreamCorruptedException;
-import java.util.ArrayList;
-
-import javax.print.CancelablePrintJob;
 
 
 public class BasicClassTest {
 
 //	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
 //		int[] array = { 0,1,2,3,4,5};
 //		RandomListNode head = RandomListNode.array2ListNode(array);
 //		System.out.println("original list");
